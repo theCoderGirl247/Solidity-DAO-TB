@@ -73,6 +73,11 @@ contract Voting is ReentrancyGuard {
         require(msg.value >= tokenPrice, "Please send a proper amount");
         
         uint256 addTokens = msg.value / tokenPrice;
+        //Return the excess amount...
+        uint256 excess = msg.value % tokenPrice;
+        if (excess > 0) {
+            payable(msg.sender).transfer(excess);
+        }
         tokens[msg.sender] += addTokens;
         emit TokensPurchased(msg.sender, addTokens);
     }
@@ -143,7 +148,7 @@ contract Voting is ReentrancyGuard {
         require(address(this).balance > 0, "No amount to withdraw!");
         uint256 amount = address(this).balance;
         payable(msg.sender).transfer(amount);
-        emit FundsWithdrawn(msg.sender, amount);
+        emit FundsWithdrawn(contractOwner, amount);
     }
 
     function updateFreeTokens(uint256 _newToken) public onlyOwner {
