@@ -1,4 +1,4 @@
-# DAO DAPP
+# Token Based - DAO DApp
 
 This project implements a decentralized autonomous organization (DAO) with a voting mechanism on the Ethereum blockchain. It allows users to:
 
