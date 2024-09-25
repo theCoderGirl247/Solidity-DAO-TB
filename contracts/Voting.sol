@@ -185,5 +185,3 @@ contract Voting is ReentrancyGuard {
         emit ProposalRemoved(_proposalId);
     }
 }
-
-// contractAddress = "0x46b5614E6caf7c516FE83b9d2EDca45A965A31c2";
