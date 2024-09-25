@@ -14,4 +14,4 @@ This project implements a decentralized autonomous organization (DAO) with a vot
 
 Built using Solidity 0.8.20 and OpenZeppelin for security features like ReentrancyGuard.
 
-## Deployed on Sepolia Testnet, requires Sepolia ETH to function.
+## Deployed using Ganache.
